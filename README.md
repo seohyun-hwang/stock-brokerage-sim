@@ -1,5 +1,5 @@
 [PROJECT STILL IN PROGRESS!<br>
-<b>Description:</b> A stock market brokerage program for practice (incl. market/limit/stop-loss/stop-limit/trailing-stop day/GTC orders, buy/sell/short/buy-to-cover actions) on historical stock market prices (1925-2024) at desired market progression speed; implemented in Java, HTML/CSS, and SQL using SpringBoot and JDBC.
+<b>Description:</b> A stock market brokerage program for diverse trading-practice (incl. market/limit/stop-loss/stop-limit/trailing-stop day/GTC orders, buy/sell/short/buy-to-cover actions) on historical stock market prices (1960-2024); implemented in Java, HTML/CSS, and SQL using SpringBoot and JDBC.
 <br>
 <b>Practice mission:</b> SQL, SpringBoot, stock market concepts, responsive web design
 
