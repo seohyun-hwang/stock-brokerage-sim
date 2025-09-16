@@ -42,8 +42,11 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 	static double stockPrice;
 
 	// time info
-	static short tradingDay_general = 1; // starting on Monday, January 4, 1960
-	static final short tradingDay_last = 23734; // from Mon 01/04/1960 to Fri 12/27/2024: 23,734 days
+	static short tradingDay_general = 1; // starting on Monday, June 5, 1972
+	static final short tradingDay_last = 19198; // from Mon 06/05/1972 to Fri 12/27/2024: 19,198 days
+
+	static short tableRowIndex_general = 0; // starting from row 2 of the table as index 0
+	static final short tableRowIndex_last = 13262; // ending on row 13,264 of the table as index 13,262
 
 	static short secondsPassed_general = 0;
 	static final short secondsPassed_maximum = 23400; // 6.5 hours (09:30 - 16:00) = 23,400 seconds
@@ -112,12 +115,14 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 	// skip 1 trading-day forward or return 1 trading-day backward
 	public static void skipDay(boolean isForward) {
         if (isForward) {
-			if (tradingDay_general < tradingDay_last) {
+			if (tableRowIndex_general < tableRowIndex_last) {
 				tradingDay_general++;
+				tableRowIndex_general++;
 
 				if (tradingDay_general % 7 == 6) { // if the day is Saturday
 					tradingDay_general += 2;
-				} else if (tradingDay_general % 7 == 0) { // if the day is Sunday
+				}
+				else if (tradingDay_general % 7 == 0) { // if the day is Sunday
 					tradingDay_general++;
 				}
 			}
@@ -126,8 +131,9 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 			}
 		}
 		else { // !isForward
-			if (tradingDay_general > 1) {
+			if (tableRowIndex_general > 0) {
 				tradingDay_general--;
+				tableRowIndex_general--;
 
 				if (tradingDay_general % 7 == 6) { // if the day is Saturday
 					tradingDay_general--;
@@ -136,7 +142,7 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 				}
 			}
 			else {
-				System.out.println("Reached the earliest date: Monday, January 4, 1960!");
+				System.out.println("Reached the earliest date: Monday, June 5, 1972!");
 			}
 		}
 	}
@@ -146,12 +152,12 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 
 	public static void actionType_buy() { // purchase a share
 		dollarCash_inYoWallet -= sharePrice;
-		share_nameCode.add();
+		shareOrdered_tickerSymbol.add();
 		share_priceAtCollection.add();
 		isShareBought.add(true);
 
 		switch (orderType) {
-			case
+			case;
 		}
 	}
 	public static void actionType_sell() { // sell an already-owned share
@@ -160,7 +166,7 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 		}
 
 		switch (orderType) {
-			case
+			case;
 		}
 	}
 
@@ -170,7 +176,7 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 		isShareBought.add(false);
 
 		switch (orderType) {
-			case
+			case;
 		}
 	}
 	public static void actionType_buyToCover() { // pay back for shorted share at current price
@@ -179,7 +185,7 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 		}
 
 		switch (orderType) {
-			case
+			case;
 		}
 	}
 
