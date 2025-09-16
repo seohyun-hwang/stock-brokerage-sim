@@ -1,11 +1,14 @@
 // SpringBoot imports
-package com.stockbrokeragesim.stockbrokeragesim;
+package com.stockbrokeragesim;
+import com.stockbrokeragesim.model.ConnectToSQL;
+import com.stockbrokeragesim.repo.SQL_ConnectionRepo;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -51,27 +54,13 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 
 
     public static void main(String[] args) {
-		SpringApplication.run(StockBrokerageSimulatorApplication.class, args); // connection to SpringBoot
-
+		ApplicationContext appContext = SpringApplication.run(StockBrokerageSimulatorApplication.class, args); // connection to SpringBoot
 		System.out.println("Welcome to my stock market brokerage simulator. Disclaimer: this program ignores dividends.");
 
-		connectTo_SQL();
+		ConnectToSQL sql_connectionObject1 = appContext.getBean(ConnectToSQL.class);
 
-	}
-	public static void connectTo_SQL() {
-		try { // SQL connection
-			String url = "jdbc:mysql://localhost:3306/stockBrokerageSimSQL1";
-			String username = "root";
-			String password = "";
+		SQL_ConnectionRepo repo = appContext.getBean(SQL_ConnectionRepo.class);
 
-			Connection connectionSQL = DriverManager.getConnection(url, username, password);
-			Statement statementSQL = connectionSQL.createStatement();
-			ResultSet resultSetSQL = statementSQL.executeQuery("select * from student");
-
-			connectionSQL.close(); // closing the SQL connection
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
 	}
 
 	public static void stockInteraction() {
