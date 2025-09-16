@@ -1,4 +1,4 @@
-package com.stockbrokeragesim.Stock.Brokerage.Simulator;
+package com.stockbrokeragesim.stockbrokeragesim;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
