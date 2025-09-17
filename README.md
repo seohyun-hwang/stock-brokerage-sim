@@ -3,8 +3,6 @@ PROJECT STILL IN PROGRESS!<br>
 <br>
 <b>Practice mission:</b> SQL, SpringBoot, stock market concepts, responsive web design
 
-Yet to do: pretty much everything (I have the general structure written down into the source code but no functional implementation)
-
 Java source code found in `src/main/java/com.stockbrokeragesim.Stock.Brokerage.Simulator` as `StockBrokerageSimulatorApplication`.
 
 ~ Seohyun

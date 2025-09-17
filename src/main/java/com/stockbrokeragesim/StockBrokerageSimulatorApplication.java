@@ -87,10 +87,45 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 					}
 				}
 				else { // no skipping
-					short focusInteractionType = shareInteractionType.get();
+					//short focusInteractionType = shareInteractionType.get();
 					for (int i = 0; i < share_tickerSymbol.size(); i++) {
-
-						short tableColumnIndex =
+						switch (share_tickerSymbol.get(i).toLowerCase()) {
+							case "ge":
+								break;
+							case "ko":
+								break;
+							case "googl":
+								break;
+							case "aapl":
+								break;
+							case "msft":
+								break;
+							case "amzn":
+								break;
+							case "nvda":
+								break;
+							case "avgo":
+								break;
+							case "cost":
+								break;
+							case "meta":
+								break;
+							case "nflx":
+								break;
+							case "pep":
+								break;
+							case "tsla":
+								break;
+							case "pg":
+								break;
+							case "cl":
+								break;
+							case "xom":
+								break;
+							case "ibm":
+								break;
+							default:
+						}
 					}
 
 
