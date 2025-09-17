@@ -1,7 +1,7 @@
 // SpringBoot imports
 package com.stockbrokeragesim;
 import com.stockbrokeragesim.model.ConnectToSQL;
-import com.stockbrokeragesim.repo.SQL_ConnectionRepo;
+import com.stockbrokeragesim.repositories.SQL_ConnectionRepo;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 // Non-SpringBoot imports
 import javax.sql.DataSource;
-import java.sql.*;
 import java.util.ArrayList;
 
 

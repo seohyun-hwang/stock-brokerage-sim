@@ -1,16 +1,13 @@
-function transferToSpringBoot() {
-    fetch('api/getFromHTML', {
-        method: 'POST',
-        headers: {
-        body.JSON.stringify({
-        })
+function fetchPrice(ticker) {
+    fetch(`/api/stocks/${ticker}`)
         .then(response => response.json())
-        .then(data => {
-        console.log('Success', data);
+        .then(price => {
+            document.querySelector(".stock-display-graph").innerText =
+                ticker + " : $" + price.toFixed(2);
         })
-        .catch(error) => {
-            console.error('Error: ', error);
-        }
-        }
-    });
+        .catch(error => console.error("Error fetching price:", error));
+}
+
+function selectStock(ticker) {
+    setInterval(() => fetchPrice(ticker), 500);
 }

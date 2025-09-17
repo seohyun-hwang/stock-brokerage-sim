@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -17,65 +17,70 @@
         </button>
         <div class="stock-options">
             <div class="stock-option-btn">
-                <button class="btn" onclick="transferToSpringBoot()">
+                <button class="btn" onclick="selectStock('GE')">
                     [GE] General Electric Co
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('KO')">
                     [KO] Coca-Cola Co
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('GOOGL')">
                     [GOOGL] Alphabet Inc Class A
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('AAPL')">
                     [AAPL] Apple Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('MSFT')">
                     [MSFT] Microsoft Corp
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('AMZN')">
                     [AMZN] Amazon.com Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('NVDA')">
                     [NVDA] NVIDIA Corp
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('AVGO')">
                     [AVGO] Broadcom Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('COST')">
                     [COST] Costco Wholesale Corp
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('META')">
                     [META] Meta Platforms Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('NFLX')">
                     [NFLX] Netflix Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('PEP')">
                     [PEP] PepsiCo Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('TSLA')">
                     [TSLA] Tesla Inc
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('PG')">
                     [PG] Procter & Gamble Co
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('CL')">
                     [CL] Colgate-Palmolive Co
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('XOM')">
                     [XOM] Exxon Mobil Corp
                 </button>
-                <button class="btn">
+                <button class="btn" onclick="selectStock('IBM')">
                     [IBM] IBM Common Stock
                 </button>
             </div>
         </div>
     </section>
     <section class="stock-display">
+        <div class="stock-display-header">
+            <h1 th:text="Share ' + ${stockTickerSymbol}"></h1>
+        </div>
+        <div class="stock-display-graph">
 
+        </div>
     </section>
 </body>
 
-<script src="js/app.js"></script>
+<script src="../static/js/app.js"></script>
 
 </html>
