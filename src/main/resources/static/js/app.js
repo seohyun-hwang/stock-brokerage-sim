@@ -1,3 +1,15 @@
+function transferSelection_toJavaBackend() {
+    const selectedValue = document.getElementById('').value;
+
+    fetch('/api/selectStock'), {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'app/json'
+        },
+        body:
+    }
+}
+
 function fetchPrice(ticker) {
     fetch(`/api/stocks/${ticker}`)
         .then(response => response.json())

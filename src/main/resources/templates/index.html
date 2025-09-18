@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,68 +12,59 @@
 
     </section>
     <section class="user-interaction">
-        <button class="btn">
+        <label for="stock-options">Stock:</label>
+        <select name="stock-options" id="stock-options">
+            <option value="">-- Please choose an option --</option>
+            <option value="stockOptionGE">[GE] General Electric Co</option>
+            <option value="stockOptionKO">[KO] Coca-Cola Co</option>
+            <option value="stockOptionGOOGL">[GOOGL] Alphabet Inc Class A</option>
+            <option value="stockOptionAAPL">[AAPL] Apple Inc</option>
+            <option value="stockOptionMSFT">[MSFT] Microsoft Corp</option>
+            <option value="stockOptionAMZN">[AMZN] Amazon.com Inc</option>
+            <option value="stockOptionNVDA">[NVDA] NVIDIA Corp</option>
+            <option value="stockOptionAVGO">[AVGO] Broadcom Inc</option>
+            <option value="stockOptionCOST">[COST] Costco Wholesale Corp</option>
+            <option value="stockOptionMETA">[META] Meta Platforms Inc</option>
+            <option value="stockOptionNFLX">[NFLX] Netflix Inc</option>
+            <option value="stockOptionPEP">[PEP] PepsiCo Inc</option>
+            <option value="stockOptionTSLA">[TSLA] Tesla Inc</option>
+            <option value="stockOptionPG">[PG] Procter & Gamble Co</option>
+            <option value="stockOptionCL">[CL] Colgate-Palmolive Co</option>
+            <option value="stockOptionXOM">[XOM] Exxon Mobil Corp</option>
+            <option value="stockOptionIBM">[IBM] IBM Common Stock</option>
+        </select>
 
-        </button>
-        <div class="stock-options">
-            <div class="stock-option-btn">
-                <button class="btn" onclick="selectStock('GE')">
-                    [GE] General Electric Co
-                </button>
-                <button class="btn" onclick="selectStock('KO')">
-                    [KO] Coca-Cola Co
-                </button>
-                <button class="btn" onclick="selectStock('GOOGL')">
-                    [GOOGL] Alphabet Inc Class A
-                </button>
-                <button class="btn" onclick="selectStock('AAPL')">
-                    [AAPL] Apple Inc
-                </button>
-                <button class="btn" onclick="selectStock('MSFT')">
-                    [MSFT] Microsoft Corp
-                </button>
-                <button class="btn" onclick="selectStock('AMZN')">
-                    [AMZN] Amazon.com Inc
-                </button>
-                <button class="btn" onclick="selectStock('NVDA')">
-                    [NVDA] NVIDIA Corp
-                </button>
-                <button class="btn" onclick="selectStock('AVGO')">
-                    [AVGO] Broadcom Inc
-                </button>
-                <button class="btn" onclick="selectStock('COST')">
-                    [COST] Costco Wholesale Corp
-                </button>
-                <button class="btn" onclick="selectStock('META')">
-                    [META] Meta Platforms Inc
-                </button>
-                <button class="btn" onclick="selectStock('NFLX')">
-                    [NFLX] Netflix Inc
-                </button>
-                <button class="btn" onclick="selectStock('PEP')">
-                    [PEP] PepsiCo Inc
-                </button>
-                <button class="btn" onclick="selectStock('TSLA')">
-                    [TSLA] Tesla Inc
-                </button>
-                <button class="btn" onclick="selectStock('PG')">
-                    [PG] Procter & Gamble Co
-                </button>
-                <button class="btn" onclick="selectStock('CL')">
-                    [CL] Colgate-Palmolive Co
-                </button>
-                <button class="btn" onclick="selectStock('XOM')">
-                    [XOM] Exxon Mobil Corp
-                </button>
-                <button class="btn" onclick="selectStock('IBM')">
-                    [IBM] IBM Common Stock
-                </button>
-            </div>
-        </div>
+        <label for="action-options">Action type: </label>
+        <select name="action-options" id="action-options">
+            <option value="">-- Please choose an option --</option>
+            <option value="actionOptionBuy">Buy</option>
+            <option value="actionOptionSell">Sell</option>
+            <option value=actionOptionShort"">Short</option>
+            <option value="actionOptionBTC">Buy-to-cover</option>
+        </select>
+
+        <label for="order-options">Order type: </label>
+        <select name="order-options" id="order-options">
+            <option value="">-- Please choose an option --</option>
+            <option value="orderOptionMarket">Market</option>
+            <option value="orderOptionLimit">Limit</option>
+            <option value="orderOptionStopLoss">Stop-loss</option>
+            <option value="orderOptionStopLimit">Stop-limit</option>
+            <option value="orderOptionTrailingStop">Trailing-stop</option>
+        </select>
+
+        <label for="order-duration">Duration: </label>
+        <select name="order-duration" id="order-duration">
+            <option value="">-- Please choose an option --</option>
+            <option value="orderDurationDay">Day</option>
+            <option value="orderDurationGTC">Good-Til-Canceled</option>
+        </select>
+
+
     </section>
     <section class="stock-display">
         <div class="stock-display-header">
-            <h1 th:text="Share ' + ${stockTickerSymbol}"></h1>
+
         </div>
         <div class="stock-display-graph">
 

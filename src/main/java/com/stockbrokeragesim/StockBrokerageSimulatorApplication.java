@@ -1,7 +1,5 @@
 // SpringBoot imports
 package com.stockbrokeragesim;
-import com.stockbrokeragesim.model.ConnectToSQL;
-import com.stockbrokeragesim.repositories.SQL_ConnectionRepo;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,113 +51,14 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 
 
     public static void main(String[] args) {
-		ApplicationContext appContext = SpringApplication.run(StockBrokerageSimulatorApplication.class, args); // connection to SpringBoot
+		// connection to SpringBoot
+		ApplicationContext appContext = SpringApplication.run(StockBrokerageSimulatorApplication.class, args);
 		System.out.println("Welcome to my stock market brokerage simulator. Disclaimer: this program ignores dividends.");
-
-		ConnectToSQL sql_connectionObject1 = appContext.getBean(ConnectToSQL.class);
-
-		SQL_ConnectionRepo repo = appContext.getBean(SQL_ConnectionRepo.class);
 
 	}
 
-	public static void stockInteraction() {
-		for (int halfSecondsPassed = 0; halfSecondsPassed < 46800; halfSecondsPassed++) { // 6.5 hours (09:30 - 16:00) = 46,800 half-seconds
-			try {
-				if (skipSwitch == 1) { // skip forward 1 day
-					if (tableRowIndex_general < tableRowIndex_last) {
-						tableRowIndex_general++;
-						stockInteraction();
-						break;
-					}
-					else {
-						System.out.println("Reached the latest date: Friday, December 27, 2024!");
-					}
-				}
-				else if (skipSwitch == -1) { // skip backward 1 day
-					if (tableRowIndex_general > 0) {
-						tableRowIndex_general--;
-						stockInteraction();
-						break;
-					}
-					else {
-						System.out.println("Reached the earliest date: Monday, June 5, 1972!");
-					}
-				}
-				else { // no skipping
-					//short focusInteractionType = shareInteractionType.get();
-					for (int i = 0; i < share_tickerSymbol.size(); i++) {
-						switch (share_tickerSymbol.get(i).toLowerCase()) {
-							case "ge":
-								break;
-							case "ko":
-								break;
-							case "googl":
-								break;
-							case "aapl":
-								break;
-							case "msft":
-								break;
-							case "amzn":
-								break;
-							case "nvda":
-								break;
-							case "avgo":
-								break;
-							case "cost":
-								break;
-							case "meta":
-								break;
-							case "nflx":
-								break;
-							case "pep":
-								break;
-							case "tsla":
-								break;
-							case "pg":
-								break;
-							case "cl":
-								break;
-							case "xom":
-								break;
-							case "ibm":
-								break;
-							default:
-						}
-					}
+	public static void activatedFunction() {
 
-
-					if (focusInteractionType < 200) { // GTC order
-
-					}
-					else if (focusInteractionType < 300) { // day order
-
-					}
-					else { // not an order
-
-					}
-
-					if (focusInteractionType % 100 < 20) { // buy
-
-					}
-					else if (focusInteractionType % 100 < 30) { // sell
-
-					}
-					else if (focusInteractionType % 100 < 40) { // short
-
-					}
-					else { // buy-to-cover
-
-					}
-
-					focusPrice_rightNow = (Math.random() * (focusPrice * 0.25)) + (focusPrice * 0.75);
-					Thread.sleep(500); // pause for 500 milliseconds until the next stock-price update (0.5 second)
-				}
-			} catch (InterruptedException e) {
-				// Handle the InterruptedException if the thread is interrupted
-				System.out.println("Thread interrupted during sleep.");
-				Thread.currentThread().interrupt(); // Restore the interrupted status
-			}
-		}
 	}
 
 
@@ -168,5 +67,6 @@ public class StockBrokerageSimulatorApplication implements CommandLineRunner {
 		log.info("Datasource: " + dataSource.toString());
 		final JdbcTemplate restTemplate = new JdbcTemplate(dataSource);
 		restTemplate.execute("select 1");
-	}
+	};
+
 }
