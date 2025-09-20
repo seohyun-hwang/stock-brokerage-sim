@@ -34,44 +34,26 @@
             <option value="stockOptionIBM">[IBM] IBM Common Stock</option>
         </select>
 
-        <label for="action-options">Action type: </label>
-        <select name="action-options" id="action-options">
-            <option value="">-- Please choose an option --</option>
-            <option value="actionOptionBuy">Buy</option>
-            <option value="actionOptionSell">Sell</option>
-            <option value=actionOptionShort"">Short</option>
-            <option value="actionOptionBTC">Buy-to-cover</option>
+
+        <label for="year-options">Year:</label>
+        <select name="year-options" id="year-options">
+            <option></option>
         </select>
 
-        <label for="order-options">Order type: </label>
-        <select name="order-options" id="order-options">
-            <option value="">-- Please choose an option --</option>
-            <option value="orderOptionMarket">Market</option>
-            <option value="orderOptionLimit">Limit</option>
-            <option value="orderOptionStopLoss">Stop-loss</option>
-            <option value="orderOptionStopLimit">Stop-limit</option>
-            <option value="orderOptionTrailingStop">Trailing-stop</option>
+        <label for="month-options">Date:</label>
+        <select name="month-options" id="month-options">
+            <option></option>
         </select>
 
-        <label for="order-duration">Duration: </label>
-        <select name="order-duration" id="order-duration">
-            <option value="">-- Please choose an option --</option>
-            <option value="orderDurationDay">Day</option>
-            <option value="orderDurationGTC">Good-Til-Canceled</option>
+        <label for="day-options">Day:</label>
+        <select name="day-options" id="day-options">
+            <option></option>
         </select>
 
-
-    </section>
-    <section class="stock-display">
-        <div class="stock-display-header">
-
-        </div>
-        <div class="stock-display-graph">
-
-        </div>
+        <button class="btn" id="stock-option-submissions">Submit</button>
     </section>
 </body>
 
-<script src="../static/js/app.js"></script>
+<script src="../static/js/index.ts"></script>
 
 </html>

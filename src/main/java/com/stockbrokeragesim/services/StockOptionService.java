@@ -1,13 +1,12 @@
 package com.stockbrokeragesim.services;
 
-import com.stockbrokeragesim.model.StockOption;
+import com.stockbrokeragesim.models.StockOption;
 import com.stockbrokeragesim.repositories.StockOptionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
 @Service
 public class StockOptionService {
@@ -18,7 +17,7 @@ public class StockOptionService {
     List<StockOption> stockOptions = new ArrayList<>();
 
     public List<StockOption> getStockOptions() {
-        return stockOptionRepo.findAll();
+        return stockOptionRepo.findAll(); // returning the list of stock options
     }
 
 
